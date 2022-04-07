@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+       
+</head>
+<body>
+    <div id="d1"></div>
+    <p id="push"></p>
+    <h4 id="sort"></h4>
+    <p id="reverse"></p>
+    <b id="pop"></b>
+
+    <div>
+        <p>Enter Employee Id: <input type="number" id="Id" name="EmpId" /></p>
+        <p>Enter Employee Name: <input type="text" id="Name" name="EmpName" /></p>
+        <p>Enter Employee Salary: <input type="number" id="Salary" name="EmpSalary" /></p>
+        <button type="button" onclick="Save()">Save and Display</button>
+    </div>
+
+    <div id="Employee"></div>
+
+
+    <!--</section>-->
+    <script>
+        // Assignment No 1 Create an Array and display it
+        var order = ["One", "Two", "Three"];//array
+
+        var data = "<ol type=A>";  // start of order list  // adding in var data in the form string
+        for (let i = 0; i < order.length; i++) { // for loop (local variable use)
+            data += "<li>" + order[i] + "</li>"; // adding array element into the list to display in a ordered list
+        }
+        data += "</ol>"; // end of ol tag
+        document.getElementById("d1").innerHTML = data;  // giving data to d1
+
+        order.push("Four");
+        document.getElementById("push").innerHTML = "Array After Push function: " + order;
+
+        order.sort();
+        document.getElementById("sort").innerHTML = "Array after sorting: " + order;
+
+        order.reverse();
+        document.getElementById("reverse").innerHTML = "Reverse Array: " + order;
+
+        order.pop();
+        document.getElementById("pop").innerHTML = "Array After pop function: " + order;
+
+        //Assignment Number 2 design form Employee
+        // Accept details like Id, Name, Salary and  Stored in a EmployeeObject
+        // and display
+
+        function Save() {
+            var Employee = {
+                empId: parseInt(document.getElementById("Id").value),
+                empName: document.getElementById("Name").value,
+                empSalary: parseFloat(document.getElementById("Salary").value)
+            }
+            document.getElementById("Employee").innerHTML = JSON.stringify(Employee);
+        }
+
+    </script>
+
+    </p>
+</body>
+</html>
